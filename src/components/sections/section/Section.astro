@@ -1,0 +1,14 @@
+---
+import "./Section.scss"
+
+interface Props {
+    id: string;
+    shadow?: boolean;
+}
+
+const props:Props = Astro.props;
+---
+
+<section class=`section${props.shadow?" shadow":""}` id={props.id}>
+    <slot />
+</section>

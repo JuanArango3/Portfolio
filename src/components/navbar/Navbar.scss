@@ -1,0 +1,124 @@
+@use "/src/globals/mixins.scss" as *;
+
+@mixin base-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 15rem;
+
+  z-index: 999;
+
+  background-color: #000;
+  color: #fff;
+
+  @include tablet {
+    padding: 1rem 2rem;
+  }
+
+  div.logo a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 2rem;
+  }
+
+  nav.links {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 8;
+    align-items: center;
+    font-size: 1.1rem;
+    width: 40%;
+    gap: 1.5rem;
+
+    @include mobile {
+      display: none;
+    }
+
+    @mixin before-visible {
+      visibility: visible;
+      width: 100%;
+    }
+    a {
+      @include base-link;
+      padding: 0.5rem 1rem;
+      transition: 0.3s;
+      position: relative;
+
+      &:hover:before {
+        @include before-visible;
+      }
+
+      &:before {
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        content: '';
+        visibility: hidden;
+        width: 0;
+        height: 2px;
+        background: white;
+        transition: all 0.3s;
+      }
+
+      &.active:before {
+        @include before-visible;
+      }
+    }
+  }
+
+  div.mobile-icon {
+    display: none;
+    padding: 0.4rem 0.6rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+
+    @include mobile {
+      display: block;
+      cursor: pointer;
+    }
+  }
+}
+
+aside.sidebar {
+  position: fixed;
+  z-index: 9999;
+  font-size: 2rem;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  color: white;
+
+  right: -100%;
+
+  display: flex;
+
+  transition: .3s linear;
+    &.active {
+        right: 0;
+    }
+
+  nav.mobile-links {
+    flex-grow: 3;
+    display: flex;
+    flex-direction: column;
+    a {
+      @include base-link;
+      padding: 2rem;
+    }
+  }
+
+  div.close-icon {
+    display: flex;
+    justify-content: flex-end;
+    padding: 2.5rem;
+    cursor: pointer;
+  }
+}

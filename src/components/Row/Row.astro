@@ -1,0 +1,13 @@
+---
+import "./Row.scss"
+
+interface Props {
+    gap?: string;
+}
+
+const props:Props = Astro.props;
+---
+
+<div class="row" style={props.gap && `gap: ${props.gap}`} >
+    <slot />
+</div>

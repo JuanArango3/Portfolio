@@ -1,0 +1,52 @@
+---
+import "./Experience.scss"
+import Section from "../section/Section.astro";
+import Title from "../../title/Title.astro";
+import Row from "../../Row/Row.astro";
+import Timelapse from "../../timelapse/Timelapse.astro";
+---
+
+<Section id="hdv">
+    <Title align="center">Hoja de vida</Title>
+    <Row>
+        <div class="education">
+            <h3>Educación</h3>
+            <Timelapse title="Ingeniería Informática" date="2021 – 2025" subtitle="Unilasallista" />
+
+            <h3>Proyectos</h3>
+            <Timelapse title="Aplicación VoD" date="2023 – Presente">
+                <ul>
+                    <li>Desarrollo de nuevas características usando el framework Spring boot</li>
+                    <li>Obtención de datos utilizando técnicas de web scrapping e ingeniería inversa</li>
+                    <li>Sistema de actualizaciones para descargar nuevos episodios en emisión</li>
+                    <li>Build y Despliegue de la aplicación y sus dependencias usando Docker</li>
+                    <li>Integración de CI usando GitHub Actions</li>
+                    <li>Uso eficiente de la cache en memoria para acelerar tiempos de respuesta</li>
+                </ul>
+            </Timelapse>
+        </div>
+        <div class="experience">
+            <h3>Experiencia</h3>
+            <Timelapse title="Desarrollador frontend" date="Abril 2023" subtitle="Freelance">
+                <p>Desarrollo de una aplicación web responsive según el diseño proporcionado por el equipo de UX/UI, utilizando la librería de React.js con TypeScript.</p>
+            </Timelapse>
+            <Timelapse title="Desarrollador backend" date="Agosto 2022 – Febrero 2023" subtitle="Freelance">
+                <ul>
+                    <li>Desarrollo de nuevas características usando el framework Spring boot</li>
+                    <li>Despliegue de la aplicación en un entorno Linux</li>
+                    <li>Autenticación mediante JWT y Spring Security</li>
+                    <li>Sistema de permisos y roles</li>
+                    <li>Uso eficiente de la cache para acelerar tiempos de respuesta</li>
+                    <li>Control de versiones Git</li>
+                </ul>
+            </Timelapse>
+            <Timelapse title="Desarrollador full-stack" date="2019 – 2021" subtitle="Freelance">
+                <p>Desarrollo, mantenimiento y despliegue de la aplicación web utilizando Laravel como framework de
+                    backend, su motor de plantillas (Blade) para su frontend, MariaDB para la base de datos, Mongo para la
+                    obtención de datos con un sistema externo y GitHub para el control de versiones. Integrando Redis para la
+                    caché, y el desarrollo de un REST API para su posterior integración en una aplicación externa.
+                </p>
+            </Timelapse>
+        </div>
+    </Row>
+</Section>

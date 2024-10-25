@@ -1,0 +1,17 @@
+@use "/src/globals/mixins.scss" as *;
+
+.row {
+  display: flex;
+
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  > * {
+    flex: 1;
+
+    @include tablet {
+      align-items: center;
+      flex: auto;
+    }
+  }
+}

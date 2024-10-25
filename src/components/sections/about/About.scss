@@ -1,0 +1,28 @@
+@use "/src/globals/mixins.scss" as *;
+
+div.profile {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+div.info {
+  flex: 5;
+  p {
+    margin: 0.2rem 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+div.skills {
+  h3 {
+    margin: 0.5rem 0 0 0;
+  }
+}

@@ -1,0 +1,17 @@
+---
+import "./Timelapse.scss"
+
+interface Props {
+    title: string;
+    date: string;
+    subtitle?: string;
+}
+
+const props:Props = Astro.props;
+---
+<div class="timelapse">
+    <h4>{props.title}</h4>
+    <h5>{props.date}</h5>
+    {props.subtitle && <p><em>{props.subtitle}</em></p>}
+    <slot />
+</div>

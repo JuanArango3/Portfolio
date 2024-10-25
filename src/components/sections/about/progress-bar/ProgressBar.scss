@@ -1,0 +1,31 @@
+@use "/src/globals/mixins.scss" as *;
+
+div.progress {
+  display: flex;
+  flex-direction: column;
+  color: #4e4e4e;
+
+  margin-bottom: 0.5rem;
+
+  @include mobile {
+    margin-right: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  div.header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  div.bar {
+    background-color: rgba(0, 0, 0, 0.05);
+    div.fill {
+      height: 1rem;
+      background-color: $principalColor;
+    }
+  }
+
+}

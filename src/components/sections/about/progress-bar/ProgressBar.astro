@@ -1,0 +1,21 @@
+---
+import "./ProgressBar.scss"
+
+
+interface Props {
+    title: string;
+    percentage: number;
+}
+
+const props:Props = Astro.props;
+---
+
+<div class="progress">
+    <div class="header">
+        <span>{props.title}</span>
+        <span>{props.percentage}%</span>
+    </div>
+    <div class="bar">
+        <div class="fill" style={`width: ${props.percentage}%`}></div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+---
+import "./Title.scss"
+
+interface Props {
+    align: "left" | "center";
+}
+
+const props:Props = Astro.props;
+---
+<h2 class=`title ${props.align}`><slot /></h2>

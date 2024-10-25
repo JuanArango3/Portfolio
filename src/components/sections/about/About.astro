@@ -1,0 +1,38 @@
+---
+import "./About.scss"
+import { Image } from 'astro:assets';
+import profile from "./profile.jpg"
+import Section from "../section/Section.astro";
+import Title from "../../title/Title.astro";
+import Row from "../../Row/Row.astro";
+import ProgressBar from "./progress-bar/ProgressBar.astro";
+---
+<Section shadow={true} id="about">
+    <Row gap="5rem">
+        <Row>
+            <div class="profile"><Image src={profile} alt="Profile" /></div>
+            <div class="info">
+                <p><b>Nombre: </b>Juan Arango</p>
+                <p><b>Perfil: </b>Desarrollador backend</p>
+                <p><b>Email: </b><a href="mailto:jm.arango03@gmail.com">jm.arango03@gmail.com</a></p>
+
+                <div class="skills">
+                    <h3>Skills</h3>
+                    <ProgressBar title="Java" percentage={100} />
+                    <ProgressBar title="Spring Boot" percentage={95} />
+                    <ProgressBar title="Docker" percentage={95} />
+                    <ProgressBar title="JavaScript" percentage={90} />
+                    <ProgressBar title="React.js" percentage={80} />
+                    <ProgressBar title="PHP" percentage={80} />
+                    <ProgressBar title="Laravel" percentage={75} />
+                </div>
+            </div>
+        </Row>
+        <div>
+            <Title align="left">Sobre mí</Title>
+            <p>Soy <strong>Juan Manuel Arango Estrada</strong>, un desarrollador backend apasionado por crear soluciones eficientes y escalables. Actualmente, estoy cursando Ingeniería Informática en Unilasallista, con finalización prevista en 2025. Tengo experiencia en el desarrollo de aplicaciones utilizando tecnologías como <strong>Java, PHP, JavaScript, Spring Boot, Laravel</strong> y más.</p>
+            <p>Me especializo en el diseño de arquitecturas backend sólidas, con un enfoque en la optimización de rendimiento mediante caché y despliegue en entornos <strong>Docker</strong>. Mi capacidad para integrar <strong>CI/CD</strong>, autenticación segura y la implementación de REST APIs me permite ofrecer soluciones que combinan eficiencia y seguridad. Además, me interesa explorar el uso de técnicas como <strong>web scraping</strong> e ingeniería inversa para aprovechar datos en proyectos complejos.</p>
+        </div>
+    </Row>
+
+</Section>
